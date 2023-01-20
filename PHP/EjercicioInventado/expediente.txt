@@ -1,0 +1,8 @@
+Alumno: Irina
+Asignatura: HTML
+Curso: DAW
+Nota actitud: 7
+Nota trabajos: 7
+Nota examen: 10
+Nota final: 8
+¿Titula?: Si

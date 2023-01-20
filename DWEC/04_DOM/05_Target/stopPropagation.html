@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo StopPropagación</title>
+</head>
+
+<body>
+    <div>
+        pinta de rojo
+        <button> pinta de verde</button>
+    </div>
+    <script>
+        let button = document.querySelector("button");
+        let div = document.querySelector("div");
+        button.addEventListener("click", (ev) => {
+            document.body.style.background = "green";
+            
+            // Para evitar la propagación y que el fondo de la página no se pinte en rojo tras hacer clic en
+            // el botón, basta añadir la orden ev.stopPropagation al final de la función callback del botón
+            ev.stopPropagation();
+        });
+        div.addEventListener("click", (ev) => {
+            document.body.style.background = "red";
+        });
+    </script>
+</body>
+
+</html>

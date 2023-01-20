@@ -1,0 +1,37 @@
+{
+    "excursiones": [
+        {
+            "nombreRuta": "Ruta del Amazonas",
+            "precio": 15.99,
+            "numParticipantes": 5,
+            "completa": true,
+            "itinerario": [
+                "Centro de salida",
+                "Monolito",
+                "Cascada"
+            ]
+        },
+        {
+            "nombreRuta": "Ruta del Atlantico",
+            "precio": 10.99,
+            "numParticipantes": 10,
+            "completa": false,
+            "itinerario": [
+                "Centro de salida",
+                "Monolito",
+                "Cascada"
+            ]
+        },
+        {
+            "nombreRuta": "Ruta del Pacifico",
+            "precio": 20.99,
+            "numParticipantes": 15,
+            "completa": true,
+            "itinerario": [
+                "Centro de salida",
+                "Monolito",
+                "Cascada"
+            ]
+        }
+    ]
+}

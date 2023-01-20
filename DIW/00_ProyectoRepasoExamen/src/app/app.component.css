@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-button{
+    height: 60px;
+}
+
+.ranking-table th, td{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.ranking-table th{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    width: 100px;
+}
+
+.ranking-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.ranking-wrapper select{
+    height: 29px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/* ngCLASSES */
+
+.red{
+ color: red;
+}
+
+.blue{
+ color: blue;
+}
+
+.green{
+ color: green;
+}

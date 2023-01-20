@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h2>Nota: {{score}}</h2>
+
+  <h2 *ngIf="checkScore(); else noPasa">Has aprobado</h2>
+  <ng-template #noPasa>
+    <h2>No has aprobado</h2>
+  </ng-template>
+
+  <div>
+    <h2>{{writeScore(score)}}</h2>
+    <button (click)="moreScore()">+</button>
+    <button (click)="lessScore()">-</button>
+  </div>
+</body>
+
+</html>

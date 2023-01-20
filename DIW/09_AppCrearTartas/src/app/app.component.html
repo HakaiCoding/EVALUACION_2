@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="form">
+      <h2>Cake Generator</h2><br>
+      <label>Nombre:</label><br>
+      <input type="text" #name><br><br>
+      <label>Sabores:</label><br>
+      <input type="text" #flavor><br><br>
+      <label>Intolerancia:</label><br>
+      <select #intolerance>
+        <option>Sin Intolerancia</option>
+        <option>Gluten</option>
+        <option>Vegano</option>
+        <option>Huevo</option>
+        <option>Lacteo</option>
+        <option>Dieta</option>
+      </select><br><br>
+      <label>Calorias por ración:</label><br>
+      <input type="number" #calories><br><br>
+      <label>Precio:</label><br>
+      <input type="number" #price><br><br>
+      <label>Numero de porciones:</label><br>
+      <input type="number" #portions><br><br><br><br>
+      <button type="submit" (click)="createCake(
+        name.value,
+        flavor.value,
+        intolerance.value,
+        calories.value,
+        price.value,
+        portions.value)">Create</button>
+    </div>
+
+  </div><br><br><br>
+
+  <div>
+    <div *ngIf="cakes.length === 0; else mostrar"></div>
+
+    <ng-template #mostrar>
+      <label>Filtrar por intolerancias (Gluten, Vegano, Huevo, Lacteo, Dieta)</label><br>
+      <select #filter [(ngModel)]="checkIntolerance">
+        <option value="Sin">Sin Intolerancia</option>
+        <option value="Gluten">Gluten</option>
+        <option value="Vegano">Vegano</option>
+        <option value="Huevo">Huevo</option>
+        <option value="Lacteo">Lacteo</option>
+        <option value="Dieta">Dieta</option>
+      </select><br>
+      <input type="number" name="checkCalories" [(ngModel)]="checkCalories" *ngIf="checkIntolerance === 'Dieta'">
+
+      <h2>List of Cakes</h2><br>
+      <div class="container">
+        <div *ngFor="let cake of cakes">
+          <div *ngIf="checkIntolerance !== 'Dieta'; else itemDieta">
+            <div class="card" *ngIf="cake.intolerance !== checkIntolerance"
+              [ngClass]="{gluten: cake.intolerance === 'Gluten', vegano: cake.intolerance === 'Vegano', huevo: cake.intolerance === 'Huevo', lacteo: cake.intolerance === 'Lacteo', dieta: cake.intolerance === 'Dieta'}">
+              <h2>{{cake.name}}</h2><br>
+              <h3>Sabores: {{cake.flavor}}</h3>
+              <h3>Intolerancias: {{cake.intolerance}}</h3>
+              <h3>Calorías por ración: {{cake.calRation}}</h3>
+              <h3>Precio: {{cake.price}}</h3>
+              <h3>Número de porciones: {{cake.numPortion}}</h3>
+            </div>
+          </div>
+          <ng-template #itemDieta>
+            <div class="card" *ngIf="cake.calRation <= checkCalories"
+              [ngClass]="{gluten: cake.intolerance === 'Gluten', vegano: cake.intolerance === 'Vegano', huevo: cake.intolerance === 'Huevo', lacteo: cake.intolerance === 'Lacteo', dieta: cake.intolerance === 'Dieta'}">
+              <h2>{{cake.name}}</h2><br>
+              <h3>Sabores: {{cake.flavor}}</h3>
+              <h3>Intolerancias: {{cake.intolerance}}</h3>
+              <h3>Calorías por ración: {{cake.calRation}}</h3>
+              <h3>Precio: {{cake.price}}</h3>
+              <h3>Número de porciones: {{cake.numPortion}}</h3>
+            </div>
+          </ng-template>
+        </div>
+
+      </div>
+    </ng-template>
+
+  </div>
+
+</body>
+
+</html>

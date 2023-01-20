@@ -1,0 +1,54 @@
+<div class="login" *ngIf="loginCheck === false">
+  <h2>Selección de personal</h2><br>
+  <input type="text" placeholder="Ingresa usuario" [(ngModel)]="userLogin"><br>
+  <input type="text" placeholder="Ingresa contraseña" [(ngModel)]="userPass"><br><br>
+  <button (click)="onClickEmpezar()">Empezar</button>
+  <h3 *ngIf="loginCheck === false" [ngClass]="{loginError: loginCheck === false}">{{errorMessage}}</h3>
+</div>
+
+<div class="vistaCandidatos" *ngIf="loginCheck === true">
+  <div class="wrapper">
+    <div class="candidato">
+      <p>Código Candidato: {{candidatos[cont].codCandidato}}</p>
+      <p>Nombre: {{candidatos[cont].nombre}}</p>
+      <p>Teléfono: {{candidatos[cont].telefono}}</p>
+      <p>Edad: {{candidatos[cont].edad}} años</p>
+      <div class="campoCheckbox">
+        <p>Especialidad: {{candidatos[cont].especialidad}}</p>
+        <input type="checkbox" [value]="checkEspecialidad" (click)="filterByEspecialidad()">
+      </div>
+      <div class="campoCheckbox">
+        <p>Estudios: {{nivelesEstudios[candidatos[cont].codNivel]}}</p>
+        <input type="checkbox" [value]="checkEstudios" (click)="filterByEstudios()">
+      </div>
+      <p>Experiencia: {{candidatos[cont].experiencia}} meses</p>
+      <div class="botones">
+        <button (click)="onClickBefore()">Anterior</button>
+        <button (click)="onClickAfter()">Siguiente</button>
+      </div>
+    </div>
+
+    <div *ngIf="checkEspecialidad === true && checkEstudios === false">
+      <h2 [ngStyle]="{color: 'green'}">Filtrado por Especialidad</h2>
+      <ng-container class="listaFiltro" *ngFor="let candidato of candidatos">
+        <ng-container *ngIf="candidato.especialidad === candidatos[cont].especialidad">
+          <p>Nombre:{{candidato.nombre}}</p>
+          <p>Teléfono: {{candidato.telefono}}</p>
+          <p>Experiencia: {{candidato.experiencia}} meses</p>
+          <hr>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div *ngIf="checkEstudios === true && checkEspecialidad === false">
+      <h2 [ngStyle]="{color: 'blue'}">Filtrado por Estudios</h2>
+      <ng-container class="listaFiltro" *ngFor="let candidato of candidatos">
+        <ng-container *ngIf="candidato.codNivel === candidatos[cont].codNivel">
+          <p>Nombre:{{candidato.nombre}}</p>
+          <p>Teléfono: {{candidato.telefono}}</p>
+          <p>Experiencia: {{candidato.experiencia}} meses</p>
+          <hr>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>

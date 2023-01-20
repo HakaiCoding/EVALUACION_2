@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.login{
+    display: grid;
+    place-content: center;
+}
+
+.loginError{
+    color: red;
+    text-align: center;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.campoCheckbox{
+    display: flex;
+}
+
+.listaFiltro{
+    border: 2px solid pink;
+}
+
+.candidato{
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,15 @@
+<button (click)="showAll()" *ngIf="control === false">TODOS</button><br>
+<div *ngIf="checkAll">
+  <div *ngFor="let book of books">
+    <p [ngClass]="{yesRead: book.read === true, noRead: book.read === false}">{{book.Id}} - {{book.title}} - {{book.author}} - {{book.publisher}} - {{book.read}}</p>
+  </div>
+  <button (click)="hideThings()">OCULTAR</button>
+</div>
+
+<button (click)="showRead()" *ngIf="control === false">LEIDOS</button>
+<div *ngIf="checkRead">
+  <div *ngFor="let book of books">
+    <p *ngIf="book.read === true">{{book.Id}} - {{book.title}} - {{book.author}} - {{book.publisher}} - {{book.read}}</p>
+  </div>
+  <button (click)="hideThings()">OCULTAR</button>
+</div>

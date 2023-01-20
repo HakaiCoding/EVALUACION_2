@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+
+}
+
+.box1 {
+    display: grid;
+    place-content: center;
+    width: 250px;
+    height: 150px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+  }
+.box2 {
+    display: grid;
+    place-content: center;
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid gray;
+    color: gray;
+    text-align: center;
+    line-height: 100px;
+  }
+.box2.over {
+    background-color: red;
+    color: white;
+  }

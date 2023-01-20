@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <input type="text" #name><br><br>
+  <input type="text" #surname><br><br>
+  <button (click)="userReg()">Registrar</button><br><br>
+
+  <p *ngIf="check; else checkNo">Usuarios registrado correctamente con nombre: {{name.value}} {{surname.value}}</p>
+  <ng-template #checkNo>
+    <p>Usuario no registrado</p>
+  </ng-template>
+</body>
+</html>

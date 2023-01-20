@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Aplicación Salarios</h1>
+  <h2>Nombre: {{name.value}} </h2>
+  <h2>Edad: {{age.value}} </h2>
+  <h2 [ngStyle]="{color:setColor(salary)}">Salario: {{salary}} </h2>
+
+  <div>
+    <label>Introduce nombre: </label><br>
+    <input type="text" #name>
+    <button (click)="name.value">Cambiar nombre</button>
+  </div>
+
+  <div>
+    <br><label>Introduce edad: </label><br>
+    <input type="text" #age>
+    <button (click)="age.value">Cambiar edad</button>
+  </div>
+
+  <div>
+    <br><label>Introduce salario: </label><br>
+    <input type="number" [(ngModel)]="salary">
+    <button (click)="subirSueldo5()">Subir sueldo 5%</button>
+  </div>
+
+  <div>
+    <br><label>Introduce incremento: </label><br>
+    <input type="number" #increment>
+    <button (click)="subirSueldo(increment.value)">Subir sueldo</button>
+  </div>
+
+  <div>
+    <br><label>Cantidad a sancionar: </label><br>
+    <input type="number" #deduction>
+    <button (click)="bajarSueldo(deduction.value)">Sancionar</button>
+  </div>
+
+</body>
+
+</html>

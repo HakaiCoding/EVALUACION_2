@@ -1,0 +1,40 @@
+<h2>Repaso Examen Angular</h2><br>
+<ng-container *ngIf="showForm === true">
+    <label>Nombre</label><br>
+    <input type="text" [(ngModel)]="name"><br>
+    <label>Nota DIW</label><br>
+    <input type="number" [(ngModel)]="diw"><br>
+    <label>Nota DWEC</label><br>
+    <input type="number" [(ngModel)]="dwec"><br>
+    <label>Nota PHP</label><br>
+    <input type="number" [(ngModel)]="php"><br><br><br>
+
+    <button (click)="addStudent(name, diw, dwec, php, media)">Agregar</button>
+</ng-container>
+<button (click)="toggleForm()">Ocultar/Mostar</button>
+
+<h2>Listado Alumnos</h2><br>
+<select [(ngModel)]="filtro" *ngIf="alumnos.length >=2">
+    <option value="aprobado">Aprobados</option>
+    <option value="suspenso">Suspensos</option>
+</select>
+<ul>
+    <ng-container *ngFor="let alumno of alumnos">
+        <li *ngIf="(alumno.diw >= 5 && alumno.dwec >= 5 && alumno.php >= 5 && filtro === 'aprobado')">
+            <p>Nombre:{{alumno.nombre}}</p>
+            <p [class]="setDiwColor(alumno.diw)">Nota DIW:{{alumno.diw}}</p>
+            <p [ngClass]="{red: alumno.dwec <= 4, blue: alumno.dwec === 5, green: alumno.dwec >= 6}">Nota
+                DWEC:{{alumno.dwec}}</p>
+            <p >Nota PHP:{{alumno.php}}</p>
+            <p [ngStyle]="{color: setColorMedia(alumno.media)}">Media: {{alumno.media}}</p>
+        </li>
+        <li *ngIf="filtro === 'suspenso' && (alumno.diw < 5 || alumno.dwec < 5 || alumno.php < 5)">
+            <p>Nombre:{{alumno.nombre}}</p>
+            <p [class]="setDiwColor(alumno.diw)">Nota DIW:{{alumno.diw}}</p>
+            <p [ngClass]="{red: alumno.dwec <= 4, blue: alumno.dwec === 5, green: alumno.dwec >= 6}">Nota
+                DWEC:{{alumno.dwec}}</p>
+            <p >Nota PHP:{{alumno.php}}</p>
+            <p [ngStyle]="{color: setColorMedia(alumno.media)}">Media: {{alumno.media}}</p>
+        </li>
+    </ng-container>
+</ul>

@@ -1,0 +1,9 @@
+{
+    "remitente": "email@remitente.com",
+
+    "destinatarios": ["email@destinatario1.com", "email@destinatario2.com"],
+
+    "asunto": "Asunto del Email",
+
+    "mensaje": ["Esto seria un párrafo", "esto sería otro párrafo", "y esto seria otro párrafo"]
+}

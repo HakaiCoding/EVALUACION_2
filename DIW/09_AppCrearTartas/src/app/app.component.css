@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("../assets/background.webp") 
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form button{
+    width: 80px;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.container{
+    /* display: grid;
+    grid-template-columns: repeat(6, 3fr); */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    border: 2px black solid;
+    border-radius: 20px;
+    text-align: center;
+    width: 200px;
+    padding: 15px
+}
+
+.gluten{
+    background-color: burlywood;
+}
+
+.vegano{
+    background-color: olivedrab;
+}
+
+.huevo{
+    background-color: rgb(114, 99, 99);
+}
+
+.lacteo{
+    background-color: rgb(120, 120, 241);
+}
+
+.dieta{
+    background-color: lightgoldenrodyellow;
+}

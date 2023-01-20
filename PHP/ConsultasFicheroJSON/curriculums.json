@@ -1,0 +1,143 @@
+{
+    "cvs": [
+        {
+            "dni": "04827377H",
+            "nombre": "Carl Lewis",
+            "codigo_postal": "22303",
+            "estudios": {
+                "no_universitarios": [
+                    {
+                        "nombre": "Curso de programación",
+                        "organo_acreditador": "Tecnocampus",
+                        "duracion_horas": 160
+                    }
+                ],
+                "universitarios": [
+                    {
+                        "nombre": "Ingeniería Informática",
+                        "universidad": "Universidad Complutense de Madrid",
+                        "duracion_horas": 4
+                    }
+                ]
+            },
+            "idiomas": [
+                {
+                    "nombre": "Ingles",
+                    "organo_acreditador": "Cambridge Assessment English",
+                    "nivel": "C1"
+                }
+            ],
+            "aficiones": [
+                "deportes",
+                "lectura"
+            ],
+            "otros_datos": [
+                "Disponibilidad para viajar"
+            ]
+        },
+        {
+            "dni": "7261582G",
+            "nombre": "Jebedia Springfield",
+            "codigo_postal": "22816",
+            "estudios": {
+                "no_universitarios": [
+                    {
+                        "nombre": "Curso de natación",
+                        "organo_acreditador": "Salvamento S.A",
+                        "duracion_horas": 60
+                    }
+                ],
+                "universitarios": [
+                    {
+                        "nombre": "Ingeniería Biomédica",
+                        "universidad": "Universidad Complutense de Madrid",
+                        "duracion_horas": 4
+                    }
+                ]
+            },
+            "idiomas": [
+                {
+                    "nombre": "Español",
+                    "organo_acreditador": "Colegio de Springfield",
+                    "nivel": "Lengua materna"
+                }
+            ],
+            "aficiones": [
+                "dormir"
+            ],
+            "otros_datos": [
+                "Quiere ser alcalde"
+            ]
+        },
+        {
+            "dni": "64821672P",
+            "nombre": "Pepe Lopez",
+            "codigo_postal": "19265",
+            "estudios": {
+                "postgrado": [
+                    {
+                        "nombre": "Master en Big Data",
+                        "universidad": "Universidad Complutense",
+                        "duracion_horas": 280
+                    }
+                ]
+            },
+            "idiomas": [
+                {
+                    "nombre": "Inglés",
+                    "organo_acreditador": "Cambridge Assessment English",
+                    "nivel": "Profency"
+                }
+            ],
+            "aficiones": [
+                "tecnologías",
+                "cine"
+            ],
+            "otros_datos": [
+                "Tiene carnet de conducir"
+            ]
+        },
+        {
+            "dni": "83462278Y",
+            "nombre": "Paco Gil",
+            "codigo_postal": "83765",
+            "estudios": {
+                "no_universitarios": [
+                    {
+                        "nombre": "Grado medio de Jardinería",
+                        "organo_acreditador": "Jardin Feliz S.L",
+                        "duracion_horas": 50
+                    }
+   
+                ],
+                "universitarios": [
+                    {
+                        "nombre": "Ingeniería Informática",
+                        "universidad": "Universidad Complutense de Madrid",
+                        "duracion_horas": 4
+                    }
+                ]
+            },
+            "idiomas": [
+                {
+                    "nombre": "Inglés",
+                    "organo_acreditador": "Cambridge Academy",
+                    "nivel": "Avanzado"
+                },
+                {
+                    "nombre": "Aleman",
+                    "organo_acreditador": "Cambridge Academy",
+                    "nivel": "Avanzado"
+                }
+            ],
+            "aficiones": [
+                "futbol",
+                "bares",
+                "visitar jardines"
+            ],
+            "otros_datos": [
+                "No puede trabajar fines de semana"
+            ]
+        }
+    ]
+}

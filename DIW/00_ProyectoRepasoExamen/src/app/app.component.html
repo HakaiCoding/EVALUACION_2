@@ -1,0 +1,85 @@
+<button class="main-button" (click)="showForm()" *ngIf="checkShowForm === false">REGISTER CHAMPION</button>
+
+<div *ngIf="checkShowForm === false; else showChampForm"></div>
+<ng-template #showChampForm>
+  <label>Name</label><br>
+  <input type="text" #name><br>
+  <label>Rol</label><br>
+  <select #rol>
+    <option></option>
+    <option value="Top">Top</option>
+    <option value="Jungler">Jungler</option>
+    <option value="Mid">Mid</option>
+    <option value="Adc">Adc</option>
+    <option value="Support">Support</option>
+  </select><br>
+  <label>Tier</label><br>
+  <select #tier>
+    <option></option>
+    <option>S</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+    <option>D</option>
+  </select><br>
+  <label>Win Rate</label><br>
+  <input type="text" #winRate><br>
+  <label>Pick Rate</label><br>
+  <input type="text" #pickRate><br>
+  <label>Ban Rate</label><br>
+  <input type="text" #banRate><br><br><br>
+  <button
+    (click)="addChampion(name.value, rol.value, tier.value, winRate.value, pickRate.value, banRate.value)">
+    ADD
+  </button>
+  <button (click)="showForm()">HIDE</button>
+</ng-template><br><br><br>
+
+<div *ngIf="championList.length === 0; else showRanking"></div>
+<ng-template #showRanking>
+  <div class="ranking-wrapper">
+    <table class="ranking-table">
+      <tr>
+        <th>Name</th>
+        <th>Rol</th>
+        <th>Tier</th>
+        <th>Win Rate</th>
+        <th>Pick Rate</th>
+        <th>Ban Rate</th>
+      </tr>
+      <tr *ngFor="let champion of championList">
+        <ng-container *ngIf="(filterOption === 'rolFilter' && rolOption === champion.rol) || (filterOption === 'tierFilter' && tierOption === champion.tier) || filterOption ==='All'">
+          <td>{{champion.name}}</td>
+          <td [ngStyle]="{color: setRolColor(champion.rol)}">{{champion.rol}}</td>
+          <td [ngStyle]="{background: setTierColor(champion.tier)}">{{champion.tier}}</td>
+          <td [ngClass]="{red: champion.winRate <= 54, blue: champion.winRate == 55, green: champion.winRate >= 56}">{{champion.winRate}}%</td>
+          <td>{{champion.pickRate}}%</td>
+          <td>{{champion.banRate}}%</td>
+        </ng-container>
+      </tr>
+    </table>
+
+    <select [(ngModel)]="filterOption" class="ranking-filter" *ngIf="championList.length >=2">
+      <option value="All">ALL</option>
+      <option value="rolFilter">Rol</option>
+      <option value="tierFilter">Tier</option>
+      <option value="winRateFilter">Win Rate</option>
+    </select>
+
+    <select [(ngModel)]="rolOption" class="rol-filter" *ngIf="filterOption === 'rolFilter'">
+      <option value="Top">Top</option>
+      <option value="Jungler">Jungler</option>
+      <option value="Mid">Mid</option>
+      <option value="Adc">Adc</option>
+      <option value="Support">Support</option>
+    </select>
+
+    <select [(ngModel)]="tierOption" class="tier-filter" *ngIf="filterOption === 'tierFilter'">
+      <option value="S">S</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select> 
+  </div>
+</ng-template>

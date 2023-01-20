@@ -1,0 +1,157 @@
+[
+    {
+        "type": "header",
+        "version": "5.1.0",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "restaurante"
+    },
+    {
+        "type": "table",
+        "name": "cuestionarios",
+        "database": "restaurante",
+        "data": [
+            {
+                "idCues": "1",
+                "tipo": "A",
+                "resultado": "9",
+                "fecha": "2021-03-01",
+                "idPersona": "1"
+            },
+            {
+                "idCues": "2",
+                "tipo": "A",
+                "resultado": "7",
+                "fecha": "2021-03-01",
+                "idPersona": "1"
+            },
+            {
+                "idCues": "3",
+                "tipo": "E",
+                "resultado": "1",
+                "fecha": "2021-06-01",
+                "idPersona": "3"
+            },
+            {
+                "idCues": "4",
+                "tipo": "E",
+                "resultado": "1",
+                "fecha": "2021-03-01",
+                "idPersona": "2"
+            },
+            {
+                "idCues": "5",
+                "tipo": "E",
+                "resultado": "3",
+                "fecha": "2021-03-01",
+                "idPersona": "2"
+            },
+            {
+                "idCues": "6",
+                "tipo": "A",
+                "resultado": "8",
+                "fecha": "2021-06-01",
+                "idPersona": "1"
+            },
+            {
+                "idCues": "7",
+                "tipo": "A",
+                "resultado": "1",
+                "fecha": "2021-06-01",
+                "idPersona": "4"
+            },
+            {
+                "idCues": "8",
+                "tipo": "C",
+                "resultado": "3",
+                "fecha": "2021-05-30",
+                "idPersona": "4"
+            },
+            {
+                "idCues": "9",
+                "tipo": "A",
+                "resultado": "3",
+                "fecha": "2021-05-30",
+                "idPersona": "3"
+            },
+            {
+                "idCues": "10",
+                "tipo": "C",
+                "resultado": "5",
+                "fecha": "2021-05-30",
+                "idPersona": "2"
+            },
+            {
+                "idCues": "11",
+                "tipo": "A",
+                "resultado": "6",
+                "fecha": "2021-03-01",
+                "idPersona": "2"
+            },
+            {
+                "idCues": "12",
+                "tipo": "A",
+                "resultado": "9",
+                "fecha": "2021-03-01",
+                "idPersona": "6"
+            }
+        ]
+    },
+    {
+        "type": "table",
+        "name": "personas",
+        "database": "restaurante",
+        "data": [
+            {
+                "idPersona": "1",
+                "nombre": "Kiko",
+                "oficio": null,
+                "edad": "50"
+            },
+            {
+                "idPersona": "2",
+                "nombre": "Josemi",
+                "oficio": "aparejador",
+                "edad": "45"
+            },
+            {
+                "idPersona": "3",
+                "nombre": "Ana",
+                "oficio": "contable",
+                "edad": "50"
+            },
+            {
+                "idPersona": "4",
+                "nombre": "Alicia",
+                "oficio": "contable",
+                "edad": "45"
+            },
+            {
+                "idPersona": "5",
+                "nombre": "Juan",
+                "oficio": "profesor",
+                "edad": "45"
+            },
+            {
+                "idPersona": "6",
+                "nombre": "Juanfran",
+                "oficio": null,
+                "edad": "45"
+            },
+            {
+                "idPersona": "7",
+                "nombre": "Manuel",
+                "oficio": null,
+                "edad": "45"
+            },
+            {
+                "idPersona": "8",
+                "nombre": "Manuela",
+                "oficio": "contable",
+                "edad": "45"
+            }
+        ]
+    }
+]

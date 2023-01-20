@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <h2>Alta de empleados</h2>
+    <div class="form">
+      <label for="name">Nombre:</label>
+      <input type="text" placeholder="nombre" #name>
+      <label for="surname">Apellido:</label>
+      <input type="text" placeholder="apellido" #surname>
+      <label for="rol">Cargo:</label>
+      <input type="text" placeholder="cargo" #rol>
+      <label for="salary">Salario:</label>
+      <input type="number" placeholder="0" #salary><br><br><br>
+      <button type="submit" 
+      (click)="crearEmpleado(
+        name.value,
+        surname.value,
+        rol.value,
+        salary.value)">Agregar</button>
+    </div>
+    <div class="listaEmpleados" *ngFor="let empleado of empleados; let i = index">
+      <p class="datosEmpleado" (click)="test()" appdirectivaLi *ngIf="i % 5 !== 0 || i === 0; else linea"
+      [ngStyle]="{color: azulPares(i)}">{{i+1}} {{empleado.name}} {{empleado.surname}} {{empleado.salary}} 
+      <span [ngClass]="{directora: empleado.rol === 'Directora', botones: empleado.rol === 'Botones'}">{{empleado.rol}}</span>
+      </p>
+      <ng-template #linea>
+        <hr>
+        <br>
+        <p class="datosEmpleado"
+        [ngStyle]="{color: azulPares(i)}">{{i+1}} {{empleado.name}} {{empleado.surname}} {{empleado.salary}} 
+        <span [ngClass]="{directora: empleado.rol === 'Directora', botones: empleado.rol === 'Botones'}">{{empleado.rol}}</span>
+        </p>
+      </ng-template>
+    </div>
+  </div>
+  <!-- <h3>{{mensaje}}</h3> -->
+</body>
+</html>
